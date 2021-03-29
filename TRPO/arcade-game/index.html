@@ -1,119 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>P1</title>
-	<link rel="shortcut icon" href="assets/images/ship-std.png"> <!-- favicon -->
+    <title>P1</title>
+    <link rel="shortcut icon" href="assets/images/ship-std.png"> <!-- favicon -->
 
-	<!--  STYLES -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+    <!--  STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-	<!-- SCRIPTS -->
-	<script src="lib/p5.js"></script> <!-- p5.js library  (TODO: use p5.min.js) -->
-	<script src="lib/p5.play.js"></script> <!-- the play library for p5 - contains useful methods
-		for collision handling and sprite sheets -->
+    <!-- SCRIPTS -->
+    <script src="lib/p5.js"></script> <!-- p5.js library  (TODO: use p5.min.js) -->
+    <script src="lib/p5.play.js"></script> <!-- the play library for p5 - contains useful methods
+        for collision handling and sprite sheets -->
 
-	<script src="js/score.js"></script>
-	<script src="js/GameState.js"></script>
-	<script src="js/sketch.js"></script> <!-- JS Script that initializes and runs the game -->
+    <script src="js/score.js"></script>
+    <script src="js/GameState.js"></script>
+    <script src="js/sketch.js"></script> <!-- JS Script that initializes and runs the game -->
 </head>
 <body>
-	<!-- Title Banner -->
-	<header>
-		<h1>p-1</h1>
-	</header>
+    <!-- Title Banner -->
+    <header>
+        <h1>Galaga</h1>
+    </header>
 
-	<!-- Main Section (asides and canvas) -->
-	<main>
-		<aside class="container">
-			<!-- used to contain instructions-->
-		</aside>
-		
-		<!-- Add space around game for emphasis -->
-		<div class="bezel bezel-left">
-		</div>
+    <!-- Main Section (asides and canvas) -->
+    <main>
+        <aside class="container">
+            <!-- used to contain instructions-->
+        </aside>
+        
+        <!-- Add space around game for emphasis -->
+        <div class="bezel bezel-left">
+        </div>
 
-		<!-- Name entry and game in the center -->
-		<div class="centerpiece">
+        <!-- Name entry and game in the center -->
+        <div class="centerpiece">
 
-			<div id="canvas-container">
-				<!-- canvas goes here -->
-			</div>
+            <div id="canvas-container">
+                <!-- canvas goes here -->
+            </div>
 
-			<!-- User sees this when the page loads -->
-			<div id="start">
-				<form onsubmit="startGame(); return false;" class="name-form">
-					<h3>Start Game</h3>
-					<!-- onsubmit return false needed to run startGame and also validate required data is entered -->
-					<input type="text" id="nameInput" placeholder="Player Name" required>
-					<input type="submit" id="submitName" value="START" class="btn start-btn">
-					<!-- Pressing start hides the name prompt and starts the game -->
-				</form>
-				<div class="howToPlay">
-					<h3>How To Play</h3>
-					<p class="actionText">FIRE</p>
-					<p>(spacebar)</p>
-					<img src="assets/images/space.png" alt="Space bar">
-					<p class="actionText">LEFT and RIGHT</p>
-					<p>(arrow keys <i>or</i> A and D keys)</p>
-					<div class="movementKeyImgs">
-						<div class="leftkeys">
-							<img src="assets/images/leftkey.png" alt="left key">
-							<img src="assets/images/akey.png" alt="A key left">
-						</div>
-						<div class="rightkeys">
-							<img src="assets/images/rightkey.png" alt="right key">
-							<img src="assets/images/dkey.png" alt="D key right">
-						</div>
-					</div>
-				</div>
-			</div>
+            <!-- User sees this when the page loads -->
+            <div id="start">
+                <form onsubmit="startGame(); return false;" class="name-form">
+                    <h3>Start Game</h3>
+                    <!-- onsubmit return false needed to run startGame and also validate required data is entered -->
+                    <input type="text" id="nameInput" placeholder="Player Name" required>
+                    <input type="submit" id="submitName" value="START" class="btn start-btn">
+                    <!-- Pressing start hides the name prompt and starts the game -->
+                </form>
+                <div class="howToPlay">
+                    <h3>How To Play</h3>
+                    <p class="actionText">FIRE</p>
+                    <p>(spacebar)</p>
+                    <img src="assets/images/space.png" alt="Space bar">
+                    <p class="actionText">LEFT and RIGHT</p>
+                    <p>(arrow keys <i>or</i> A and D keys)</p>
+                    <div class="movementKeyImgs">
+                        <div class="leftkeys">
+                            <img src="assets/images/leftkey.png" alt="left key">
+                            <img src="assets/images/akey.png" alt="A key left">
+                        </div>
+                        <div class="rightkeys">
+                            <img src="assets/images/rightkey.png" alt="right key">
+                            <img src="assets/images/dkey.png" alt="D key right">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-			<div id="bottom-instructions" class="bottom-instructions">
-				<img src="assets/images/akey.png" alt="A key left">
-				<img src="assets/images/space.png" alt="Space bar">
-				<img src="assets/images/dkey.png" alt="D key right">
-			</div>
-			<div class="spacer">
+            <div id="bottom-instructions" class="bottom-instructions">
+                <img src="assets/images/akey.png" alt="A key left">
+                <img src="assets/images/space.png" alt="Space bar">
+                <img src="assets/images/dkey.png" alt="D key right">
+            </div>
+            <div class="spacer">
 
-			</div>
+            </div>
 
-		</div>
+        </div>
 
-		<!-- Add space around game for emphasis -->
-		<div class="bezel bezel-right">
-		</div>
+        <!-- Add space around game for emphasis -->
+        <div class="bezel bezel-right">
+        </div>
 
-		<!-- High scores on right side of game -->
-		<aside>
-			<div class="container">
+        <!-- High scores on right side of game -->
+        <aside>
+            <div class="container">
 
-				<h3>High Scores:</h3>
-				<!-- This table is dynamically generated w/javascript -->
-				<table id="scoreTable">
-					<thead>
-						<tr>
-							<th>Player</th>
-							<th>Score</th>
-						</tr>
-					</thead>
-				</table>
+                <h3>High Scores:</h3>
+                <!-- This table is dynamically generated w/javascript -->
+                <table id="scoreTable">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                </table>
 
-				<button onclick="clearScores()" class="btn clear-btn">CLEAR</button>
-			</div>
-		</aside>
+                <button onclick="clearScores()" class="btn clear-btn">CLEAR</button>
+            </div>
+        </aside>
 
-	</main>
+    </main>
 
-	<!-- Footer -->
-	<footer>
-		<h2>About the Project</h2>
-		<p>Read about the project and find the sourcecode on <a href="https://github.com/Ryan104/arcade-game">GITHUB</a></p>
-	</footer>
-	
+    <!-- Footer -->
+    <footer>
+        <h2>About the Project</h2>
+        <p>Read about the project and find the sourcecode on <a href="#"></a></p>
+    </footer>
+    
 </body>
 </html>
