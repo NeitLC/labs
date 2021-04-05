@@ -63,7 +63,7 @@ function clearScores(){
 	/* clearScores() - resets the scores array variable and clears the local storage */
 	allScores = [
 		{
-			name: 'Ryan',
+			name: 'Dima',
 			score: 100,
 			id: 0
 		}
