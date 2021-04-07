@@ -60,7 +60,6 @@ function sortScores(scoresArr, sortBy){
 
 
 function clearScores(){
-<<<<<<< HEAD
     /* clearScores() - resets the scores array variable and clears the local storage */
     allScores = [
         {
@@ -72,17 +71,4 @@ function clearScores(){
     // convert to json string becuase localStorage only accepts stirngs
     window.localStorage.setItem('scores', JSON.stringify(allScores));
     displayScores(allScores);
-=======
-	/* clearScores() - resets the scores array variable and clears the local storage */
-	allScores = [
-		{
-			name: 'Dima',
-			score: 100,
-			id: 0
-		}
-	];
-	// convert to json string becuase localStorage only accepts stirngs
-	window.localStorage.setItem('scores', JSON.stringify(allScores));
-	displayScores(allScores);
->>>>>>> fcc0598ea00e2605363b5cb1b8678a45efa2324f
 }
