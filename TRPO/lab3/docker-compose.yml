@@ -1,0 +1,6 @@
+version: '3'
+services:
+    latex:
+        image: mirisbowring/texlive_ctan_full:2019
+        volumes:
+            - .:/content
