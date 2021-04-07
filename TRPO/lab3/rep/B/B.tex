@@ -1,0 +1,33 @@
+\documentclass[12pt, a4paper, simple]{eskdtext}
+
+\def\No{\textnumero} % Символ номера
+
+\usepackage{../_STYLES/title_variables}
+\usepackage{hyperref}
+
+% Графа 1 (наименование изделия/документа)
+\ESKDcolumnI{\titlePageTopic\\Схема алгоритма}
+
+% Графа 2 (обозначение документа)
+\ESKDsignature{\titlePageTypeWorkLetterР.ПО4.\titlePageStudentCreditCard-0\titlePageWorkNumber~81~00}
+
+% Графа 4 (литералы)
+\ESKDcolumnIVfII{\titlePageTypeWorkLetter}
+
+% Графа 9 (наименование или различительный индекс предприятия) задает команда
+\ESKDcolumnIX{\titlePageEdu}
+
+% Графа 11 (фамилии лиц, подписывающих документ) задают команды
+% Разработ.
+\ESKDcolumnXIfI{\titlePageStudentSurname}
+% Пров.
+\ESKDcolumnXIfII{\titlePageTeacherSurname}
+% Н. контр.
+\ESKDcolumnXIfV{} 
+
+\begin{document}
+    \begin{ESKDtitlePage}
+        \input{../_INCLUDES/titlePage.tex}
+    \end{ESKDtitlePage}
+    \input{../_INCLUDES/bodyB.tex}
+\end{document}
